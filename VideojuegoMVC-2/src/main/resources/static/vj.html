@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Inicio</title>
+</head>
+<body>
+	<h1 style="color:blue">BIENVENIDOS A NUESTRA WEB</h1>
+
+	<p th:text="'Hola ' + ${nombre_usuario}"></p>
+	<p> Hola <span th:text="${nombre_usuario}"></span><p>
+	<!-- 
+	Para una lista de objetos.
+	lista -> nombre del atributo del objeto Model que hemos puesto en el controlador
+	valor -> cada uno de los valores que tiene la lista,equivalete a un for each de java
+	Ej:
+	for(String valor : lista){
+		System.out.println(valor);
+	}
+	-->
+</body>
+</html>
