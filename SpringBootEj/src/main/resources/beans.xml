@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id= "jugador1" class= "examen.modelo.entidad.Jugador">
+		<property name="nombre" value="Pedro"></property>
+		<property name="dorsal" value= "12"></property>
+	</bean>
+	<bean id= "jugador2" class= "examen.modelo.entidad.Jugador">
+		<property name="nombre" value="Jorge"></property>
+		<property name="dorsal" value= "24"></property>
+	</bean>
+	<bean id= "jugador3" class= "examen.modelo.entidad.Jugador">
+		<property name="nombre" value="Mario"></property>
+		<property name="dorsal" value= "45"></property>
+	</bean>
+	<bean id= "jugador4" class= "examen.modelo.entidad.Jugador">
+		<property name="nombre" value="Jose Pedro"></property>
+		<property name="dorsal" value= "2"></property>
+	</bean>
+	
+	
+	<bean id="listaJugadores1" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="jugador1"/>
+				<ref bean="jugador2"/>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean id="listaJugadores2" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="jugador3"/>
+				<ref bean="jugador4"/>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	
+	
+	<bean id="equipo1" class="examen.modelo.entidad.Equipo">
+		<property name="nombre" value="Getafe"></property>
+		<property name="jugadores" ref ="listaJugadores1"></property>
+		<property name="ciudad" value="Madrid"></property>
+	</bean>
+	
+	<bean id="equipo2" class="examen.modelo.entidad.Equipo">
+		<property name="nombre" value="Barcelona"></property>
+		<property name="jugadores" ref ="listaJugadores2"></property>
+		<property name="ciudad" value="Barcelona"></property>
+	</bean>
+</beans>
